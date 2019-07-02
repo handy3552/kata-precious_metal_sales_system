@@ -62,6 +62,7 @@ public class OrderApp {
 
         List<DiscountItemRepresentation> discountsList = new ArrayList<DiscountItemRepresentation>();
         DiscountItemRepresentation discountItemRepresentation = null;
+
         BigDecimal order_total_amount = BigDecimal.ZERO;//订单不优惠总金额
         for(OrderItemCommand order_item : orderItem_list) {
 
@@ -78,7 +79,6 @@ public class OrderApp {
             if(null != ticket) {
                 //折扣后金额
                 ticket_money = product_rate_money.multiply(new BigDecimal(ticket.getSaleType()));
-                discountCards.add(ticket.getSaleContent());
             }
             //计算是否有满减
             List<DiscountTypeInfo> discount_type_info_list = product.getDiscountTypeInfoGroup();
@@ -97,7 +97,6 @@ public class OrderApp {
                             discount_money_temp = product_rate_money.subtract(new BigDecimal(discount_type_info.getDiscountAmout()).multiply(times));
                             //获取最少的满减后金额
                             if(discount_money_temp.compareTo(discount_money) < 0 || discount_money.compareTo(BigDecimal.ZERO) == 0) {
-
                                 discount_money = discount_money_temp;
                             }
                         }
