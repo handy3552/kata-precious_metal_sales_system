@@ -50,8 +50,18 @@ public class Level {
         this.point_area = point_area;
     }
 
-    public Level getLevel(String level) {
-        return level_map.get(level);
+    public static String getLevel(double point) {
+        if(point >= 100000) {
+            return "钻石卡";
+        } else if(point >= 50000) {
+            return "白金卡";
+        } else if(point >= 10000) {
+            return "金卡";
+        } else if(point < 100000) {
+            return "普卡";
+        } else {
+            return "";
+        }
     }
 
     public int getLevel() {
