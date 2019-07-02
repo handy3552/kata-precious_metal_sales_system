@@ -44,9 +44,18 @@ public class ProductInfo {
      */
     private String productName;
     private String productId;
+    /**
+     * 单位
+     */
     private String productUnit;
     private double productPrice;
+    /**
+     * 折扣组合
+     */
     private SaleTicket saleGroup;
+    /**
+     * 满减规则
+     */
     private List<DiscountTypeInfo> DiscountTypeInfoGroup;
 
     public String getProductName() {

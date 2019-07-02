@@ -60,8 +60,8 @@ public class InitProductInfo {
         saleTicket_95.setSaleContent("95折券");
 
         SaleTicket saleTicket_90 = new SaleTicket();
-        saleTicket_95.setSaleType(0.9);
-        saleTicket_95.setSaleContent("9折券");
+        saleTicket_90.setSaleType(0.9);
+        saleTicket_90.setSaleContent("9折券");
         // 初始化打折券信息
         //每满3000元减350
         DiscountTypeInfo discountType_one = new DiscountTypeInfo();
@@ -130,10 +130,10 @@ public class InitProductInfo {
         productFive.setProductPrice(998.00);
         productFive.setProductUnit("套");
         List<DiscountTypeInfo> DiscountTypeInfoListTwo = new ArrayList<DiscountTypeInfo>();
-        DiscountTypeInfoListTwo.add(discountType_one);
+        DiscountTypeInfoListTwo.add(discountType_two);
         DiscountTypeInfoListTwo.add(discountType_three);
-        productFour.setDiscountTypeInfoGroup(DiscountTypeInfoListTwo);
-        productMap.put("002002",productFour);
+        productFive.setDiscountTypeInfoGroup(DiscountTypeInfoListTwo);
+        productMap.put("002002",productFive);
 
         //守扩之羽比翼双飞4.8g
         ProductInfo productSix = new ProductInfo();

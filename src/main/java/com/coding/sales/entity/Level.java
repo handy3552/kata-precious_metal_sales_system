@@ -5,9 +5,21 @@ import java.util.Map;
 
 public class Level {
 
+    /**
+     * 等级编号
+     */
     private int level;
+    /**
+     * 等级名称
+     */
     private String level_name;
+    /**
+     * 等级积分倍率
+     */
     private double level_times;
+    /**
+     * 等级积分区间
+     */
     private int[] point_area;
 
     private static Map<String, Level> level_map;
