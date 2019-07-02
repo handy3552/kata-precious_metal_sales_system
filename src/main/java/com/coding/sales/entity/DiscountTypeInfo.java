@@ -14,7 +14,7 @@ public class DiscountTypeInfo {
     // 1:金额满减 2：数量满减
     private String discountType;
     private int totalAmout;
-    private int discountAmout;
+    private double discountAmout;
 
     public int getTotalAmout() {
         return totalAmout;
@@ -24,11 +24,11 @@ public class DiscountTypeInfo {
         this.totalAmout = totalAmout;
     }
 
-    public int getDiscountAmout() {
+    public double getDiscountAmout() {
         return discountAmout;
     }
 
-    public void setDiscountAmout(int discountAmout) {
+    public void setDiscountAmout(double discountAmout) {
         this.discountAmout = discountAmout;
     }
 

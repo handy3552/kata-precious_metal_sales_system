@@ -6,8 +6,13 @@ package com.coding.sales.entity;
 9折券：如果商品参与9折，则应收金额为9折
  */
 public class SaleTicket {
-
+/*
+折扣率
+ */
     private double saleType;
+    /*
+
+     */
     private String saleContent;
 
     public double getSaleType() {
@@ -16,5 +21,13 @@ public class SaleTicket {
 
     public void setSaleType(double saleType) {
         this.saleType = saleType;
+    }
+
+    public String getSaleContent() {
+        return saleContent;
+    }
+
+    public void setSaleContent(String saleContent) {
+        this.saleContent = saleContent;
     }
 }
