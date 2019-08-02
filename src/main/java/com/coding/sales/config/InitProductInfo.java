@@ -4,6 +4,7 @@ import com.coding.sales.entity.DiscountTypeInfo;
 import com.coding.sales.entity.ProductInfo;
 import com.coding.sales.entity.SaleTicket;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -93,14 +94,14 @@ public class InitProductInfo {
         ProductInfo productOne = new ProductInfo();
         productOne.setProductId("001001");
         productOne.setProductName("世园会五十国钱币册");
-        productOne.setProductPrice(998.00);
+        productOne.setProductPrice(new BigDecimal(998.00));
         productOne.setProductUnit("册");
         productMap.put("001001",productOne);
 
         ProductInfo productTwo = new ProductInfo();
         productTwo.setProductId("001002");
         productTwo.setProductName("2019北京世园会纪念银章大全40g");
-        productTwo.setProductPrice(1380.00);
+        productTwo.setProductPrice(new BigDecimal(1380.00));
         productTwo.setProductUnit("盒");
         productTwo.setSaleGroup(saleTicket_90);
         productMap.put("001002",productTwo);
@@ -108,7 +109,7 @@ public class InitProductInfo {
         ProductInfo productThree = new ProductInfo();
         productThree.setProductId("003001");
         productThree.setProductName("招财进宝");
-        productThree.setProductPrice(1580.00);
+        productThree.setProductPrice(new BigDecimal(1580.00));
         productThree.setProductUnit("条");
         productThree.setSaleGroup(saleTicket_95);
         productMap.put("003001",productThree);
@@ -116,7 +117,7 @@ public class InitProductInfo {
         ProductInfo productFour = new ProductInfo();
         productFour.setProductId("003002");
         productFour.setProductName("水晶之恋");
-        productFour.setProductPrice(980.00);
+        productFour.setProductPrice(new BigDecimal(980.00));
         productFour.setProductUnit("条");
         List<DiscountTypeInfo> DiscountTypeInfoList = new ArrayList<DiscountTypeInfo>();
         DiscountTypeInfoList.add(discountType_four);
@@ -127,7 +128,7 @@ public class InitProductInfo {
         ProductInfo productFive = new ProductInfo();
         productFive.setProductId("002002");
         productFive.setProductName("中国经典钱币套装");
-        productFive.setProductPrice(998.00);
+        productFive.setProductPrice(new BigDecimal(998.00));
         productFive.setProductUnit("套");
         List<DiscountTypeInfo> DiscountTypeInfoListTwo = new ArrayList<DiscountTypeInfo>();
         DiscountTypeInfoListTwo.add(discountType_two);
@@ -139,7 +140,7 @@ public class InitProductInfo {
         ProductInfo productSix = new ProductInfo();
         productSix.setProductId("002001");
         productSix.setProductName("守扩之羽比翼双飞4.8g");
-        productSix.setProductPrice(1080.00);
+        productSix.setProductPrice(new BigDecimal(1080.00));
         productSix.setProductUnit("条");
         List<DiscountTypeInfo> DiscountTypeInfoListThree = new ArrayList<DiscountTypeInfo>();
         DiscountTypeInfoListThree.add(discountType_four);
@@ -152,7 +153,7 @@ public class InitProductInfo {
         ProductInfo productSeven = new ProductInfo();
         productSeven.setProductId("002003");
         productSeven.setProductName("中国银象棋12g");
-        productSeven.setProductPrice(698.00);
+        productSeven.setProductPrice(new BigDecimal(698.00));
         productSeven.setProductUnit("套");
         List<DiscountTypeInfo> DiscountTypeInfoListFour = new ArrayList<DiscountTypeInfo>();
         DiscountTypeInfoListFour.add(discountType_one);

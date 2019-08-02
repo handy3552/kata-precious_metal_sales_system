@@ -1,5 +1,6 @@
 package com.coding.sales.entity;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class ProductInfo {
@@ -48,7 +49,7 @@ public class ProductInfo {
      * 单位
      */
     private String productUnit;
-    private double productPrice;
+    private BigDecimal productPrice;
     /**
      * 折扣组合
      */
@@ -82,11 +83,11 @@ public class ProductInfo {
         this.productUnit = productUnit;
     }
 
-    public double getProductPrice() {
+    public BigDecimal getProductPrice() {
         return productPrice;
     }
 
-    public void setProductPrice(double productPrice) {
+    public void setProductPrice(BigDecimal productPrice) {
         this.productPrice = productPrice;
     }
 

@@ -70,7 +70,7 @@ public class OrderApp {
             //获取商品信息
             product = InitProductInfo.productMap.get(order_item.getProduct());
             //计算单个商品总金额
-            BigDecimal product_total_money = new BigDecimal(product.getProductPrice()).multiply(order_item.getAmount());
+            BigDecimal product_total_money = product.getProductPrice().multiply(order_item.getAmount());
             BigDecimal product_rate_money = product_total_money;
             order_total_amount = order_total_amount.add(product_total_money);
             //计算是否有折扣
@@ -107,14 +107,14 @@ public class OrderApp {
                         }
                         //第三件半价
                         if(3 == discount_type_info.getTotalAmout()) {
-                            discount_money = new BigDecimal(product.getProductPrice()).multiply(order_item.getAmount().subtract(new BigDecimal(0.5)));
+                            discount_money = product.getProductPrice().multiply(order_item.getAmount().subtract(new BigDecimal(0.5)));
                             //获取最少的满减后金额
                             if(discount_money_temp.compareTo(discount_money) < 0) {
                                 discount_money = discount_money_temp;
                             }
                         } else if(4 == discount_type_info.getTotalAmout() && order_item.getAmount().compareTo(new BigDecimal(4)) >= 0) {
                             //满3减1
-                            discount_money = new BigDecimal(product.getProductPrice()).multiply(order_item.getAmount().subtract(new BigDecimal(1)));
+                            discount_money = product.getProductPrice().multiply(order_item.getAmount().subtract(new BigDecimal(1)));
                             if(discount_money_temp.compareTo(discount_money) < 0) {
                                 discount_money = discount_money_temp;
                             }
@@ -147,7 +147,7 @@ public class OrderApp {
 
             //加入商品清单
             orderItemRepresentation = new OrderItemRepresentation(product.getProductId(),
-                    product.getProductName(), new BigDecimal(product.getProductPrice()),
+                    product.getProductName(), product.getProductPrice(),
                     order_item.getAmount(), product_total_money);
             orderItemRepresentationList.add(orderItemRepresentation);
 

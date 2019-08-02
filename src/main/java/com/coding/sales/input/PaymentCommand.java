@@ -3,7 +3,13 @@ package com.coding.sales.input;
 import java.math.BigDecimal;
 
 public class PaymentCommand {
+    /**
+     * 账户类型
+     */
     String type;
+    /**
+     * 账户金额
+     */
     BigDecimal amount;
 
     public PaymentCommand(String type, BigDecimal amount) {

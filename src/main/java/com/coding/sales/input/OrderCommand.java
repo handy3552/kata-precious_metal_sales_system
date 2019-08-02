@@ -10,8 +10,17 @@ public class OrderCommand {
     private String orderId;
     private String createTime;
     private String memberId;
+    /**
+     * 订单信息
+     */
     private List<OrderItemCommand> items;
+    /**
+     * 账户余额信息
+     */
     private List<PaymentCommand> payments;
+    /**
+     * 账户券信息
+     */
     private List<String> discounts;
 
     public static OrderCommand from(String orderCommand) {
