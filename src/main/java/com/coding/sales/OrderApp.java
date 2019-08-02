@@ -171,37 +171,29 @@ public class OrderApp {
             paymentRepresentationList.add(paymentRepresentation);
         }
 
-
-        String newLevel = "";
-        double newPoint = customer.getCustomer_points();
-        double addPoint = 0;
-        if("普卡".equals(customer.getCustomer_level())) {
-            addPoint += order_total_money.intValue();
-            newPoint += addPoint;
-            newLevel = Level.getLevel(newPoint);
-        } else if("金卡".equals(customer.getCustomer_level())) {
-            addPoint = order_total_money.intValue() * 1.5;
-            newPoint += addPoint;
-            newLevel = Level.getLevel(newPoint);
-        } else if("白金卡".equals(customer.getCustomer_level())) {
-            addPoint = order_total_money.intValue() * 1.8;
-            newPoint += addPoint;
-            newLevel = Level.getLevel(newPoint);
-        } else if("钻石卡".equals(customer.getCustomer_level())) {
-            addPoint = order_total_money.intValue() * 2;
-            newPoint += addPoint;
-            newLevel = Level.getLevel(newPoint);
-        }
-
+        int addPoint = order_total_money.intValue();
+        customer.setCustomer_points_new(addPoint);
+        int newPoint = customer.getCustomer_points_new();
+        String newLevel = customer.getCustomer_level_new();
 
         //TODO: 请完成需求指定的功能
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         ParsePosition pos = new ParsePosition(0);
         result = new OrderRepresentation(command.getOrderId(), format.parse(command.getCreateTime(), pos), command.getMemberId(),
-                customer.getCustomer_name(), customer.getCustomer_level(), newLevel, (int) addPoint, (int)newPoint,
+                customer.getCustomer_name(), customer.getCustomer_level(), newLevel, addPoint, newPoint,
                 orderItemRepresentationList, order_total_amount, discountsList,
                 order_total_amount.subtract(order_total_money), order_total_money, paymentRepresentationList,
                 discountCards);
         return result;
+    }
+
+    /**
+     * 计算商品总金额
+     * @return
+     */
+    private static int totalMoney() {
+        int totalMoney = 0;
+
+        return totalMoney;
     }
 }

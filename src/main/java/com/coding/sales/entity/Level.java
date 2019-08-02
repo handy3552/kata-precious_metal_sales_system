@@ -50,6 +50,19 @@ public class Level {
         this.point_area = point_area;
     }
 
+    public static int getNewPoints(int oldPoint, int addPoint) {
+        int newPoint = 0;
+        if("普卡".equals(getLevel(oldPoint))) {
+            newPoint += addPoint;
+        } else if("金卡".equals(getLevel(oldPoint))) {
+            newPoint += addPoint * 1.5;
+        } else if("白金卡".equals(getLevel(oldPoint))) {
+            newPoint +=  addPoint * 1.8;
+        } else if("钻石卡".equals(getLevel(oldPoint))) {
+            newPoint += addPoint * 2;
+        }
+        return newPoint;
+    }
     public static String getLevel(double point) {
         if(point >= 100000) {
             return "钻石卡";
